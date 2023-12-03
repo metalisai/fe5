@@ -58,7 +58,7 @@ const Gallery = ((props) => {
       <div className={isLightboxOpen ? "lightbox show" : "lightbox"}>
         <div className="lightbox-content">
           <button className="close" onClick={() => setIsLightboxOpen(false)}>
-            <img src={CloseIcon} alt="Close" width="20px" />
+            <img src={CloseIcon} alt="Close" width="20" />
           </button>
           <Image images={props.images} currentImage={currentImage} setCurrentImage={setCurrentImage} setIsLightboxOpen={setIsLightboxOpen} />
         </div>
