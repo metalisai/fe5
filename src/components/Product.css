@@ -130,6 +130,10 @@
   transition-duration: 0.05s;
 }
 
+.countWidget label {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .product {
     padding: 0 24px;
