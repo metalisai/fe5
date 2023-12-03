@@ -61,7 +61,7 @@ const Product = ((props) => {
         <div className="addToCartWidget">
           <div className="countWidget">
             <button onClick={DecrementCount}>-</button>
-            <label htmlFor="addCountInput">Quantity</label>
+            <label htmlFor="addCountInput" hidden>Quantity</label>
             <input id="addCountInput" type="number" step="1" value={addCount} onChange={SetCount} />
             <button onClick={IncrementCount}>+</button>
           </div>
