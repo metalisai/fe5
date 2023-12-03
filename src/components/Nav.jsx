@@ -27,7 +27,7 @@ const Nav = ((params) => {
         <img src={MenuIcon} alt="Menu" /> }
       </button>
       <a href="#" className="logo"><img src={Logo} alt="Logo" /></a>
-      <ul className={isMenuOpen ? "open" : ""}>
+      <ul className={isMenuOpen ? "navmenu open" : "navmenu"}>
       {menuItems.map((item, index) =>
         <li key={index}><a href={item.link} onClick={() => setIsMenuOpen(false)}>{item.name}</a></li>
       )}
