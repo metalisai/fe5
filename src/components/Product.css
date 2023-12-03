@@ -1,0 +1,152 @@
+.productCompany {
+  text-transform: uppercase;
+  color: var(--primary-orange);
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--neutral-dark-blue);
+}
+
+.product h1 {
+  font-size: 27pt;
+  margin-bottom: 40px;
+}
+
+.product p {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: var(--neutral-dark-grayish-blue);
+  line-height: 2.0;
+  font-size: 10pt;
+}
+
+.curPrice {
+  font-size: 21pt;
+  font-weight: 700;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.priceTag {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.oldPrice {
+  color: var(--neutral-grayish-blue);
+  text-decoration: line-through;
+}
+
+.discount {
+  height: 27px;
+  line-height: 27px;
+  color: var(--primary-orange);
+  background-color: var(--primary-orange-pale);
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+
+.addToCartWidget {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.countWidget {
+  background-color: var(--neutral-light-grayish-blue);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-width: 150px;
+}
+
+.countWidget button {
+  color: var(--primary-orange);
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16pt;
+  border: none;
+  height: 52px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.addToCartWidget input {
+  height: 52px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-weight: 700;
+  padding: 0;
+  width: 0;
+  flex: 1 0 50px;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+.addToCartWidget input:focus {
+  outline: none;
+}
+
+.bigBtn {
+  height: 52px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--primary-orange);
+  color: var(--neutral-white);
+  font-weight: 700;
+  flex: 2 1 auto;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 
+  0 30px 30px var(--primary-orange-pale);
+}
+
+.bigBtn:hover {
+  background-color: var(--primary-orange-light);
+}
+
+.bigBtn:active {
+  transform: translateY(2px);
+  transition-duration: 0.05s;
+}
+
+@media (max-width: 768px) {
+  .product {
+    padding: 0 24px;
+    padding-bottom: 100px;
+  }
+  .product h1 {
+    font-size: 20pt;
+    margin-bottom: 28px;
+    margin-top: 20px;
+  }
+  .price {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .addToCartWidget {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,183 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+
+.currentImage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  max-width: calc(min(100%, 600px));
+}
+
+.largeImg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.currentImage > div {
+  position: relative;
+}
+
+.imgBtn {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: var(--neutral-white);
+  padding: 10px;
+  transform: translateY(-50%);
+  line-height: 40px;
+  text-align: center;
+}
+
+.imgBtn:hover {
+  cursor: pointer;
+}
+
+.gallery > .currentImage .imgBtn {
+  display: none;
+}
+
+.imgBtn img {
+  position: relative;
+  filter: brightness(0.0);
+  display: inline-block;
+  left: -2px;
+  top: 3px;
+}
+
+.imgBtn.next img {
+  left: 0px;
+}
+
+.imgBtn:hover > img {
+  filter: brightness(1.0);
+}
+
+.currentImage .next {
+  right: 16px;
+}
+
+.currentImage .prev {
+  left: 16px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.thumbnails img {
+  width: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+}
+
+.thumbnail {
+  display: grid;
+}
+
+.lightbox .thumbnail::after {
+  z-index: 2;
+}
+
+.thumbnail::after {
+  content: "";
+  grid-area: 1/1;
+  width: 100%;
+  border-radius: 12px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.thumbnail:hover::after {
+  background-color: #fffa;
+}
+
+.thumbnail.active::after {
+  border: 2px solid var(--primary-orange);
+  background-color: #fffa;
+  margin: -2px;
+}
+
+.thumbnail img {
+  grid-area: 1/1;
+}
+
+.thumbnail img:hover {
+  cursor: pointer;
+}
+
+.lightbox {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-transparent);
+  z-index: 100;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.lightbox.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 80%;
+  max-height: calc(100% - 176px - 50px);
+}
+
+.lightbox-content .close {
+  align-self: flex-end;
+  background-color: transparent;
+  color: var(--primary-orange);
+  border: none;
+  filter: brightness(100.0);
+}
+
+.lightbox-content .close:hover {
+  filter: brightness(1.0);
+}
+
+.lightbox-content > img {
+  width: 400px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .thumbnails {
+    display: none;
+  }
+  .currentImage > img {
+    border-radius: 0;
+  }
+  .gallery {
+    align-items: center;
+  }
+  .gallery > .currentImage .imgBtn {
+    display: block;
+  }
+}
